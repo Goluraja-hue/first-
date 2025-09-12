@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            background-color: #ba0707;
+        }
+        body{
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+
+    </div>
+</body>
+<script>
+    let main = document.querySelector(".main");
+    window.addEventListener("mousemove",function(dets){
+        main.style.top = dets.clientY + "px";
+        main.style.left = dets.clientX + "px";
+    });
+    // main.addEventListener("mouseover",function(){
+    //     main.style.backgroundColor = "red";
+    // })
+    // main.addEventListener("mouseout",function(){
+    //     main.style.backgroundColor = "green";
+    // })
+</script>
+</html>
