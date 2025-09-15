@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="../output.css">
+    <style>
+        .error{
+            display: none;
+        }
+    </style>
+</head>
+<body style="background-image: url(https://res.cloudinary.com/dd2u8l2l6/image/upload/v1757734174/WhatsApp_Image_2025-09-13_at_08.58.54_7c10e31d_qxvoal.jpg);" class="w-screen h-screen flex justify-center items-center">
+    <div class="w-72 h-72 shadow-2xl shadow-gray-500 bg-blue-100 rounded">
+        <h2 class="text-center text-2xl  font-bold mt-4 ">Login</h2>
+    <form>
+        <div class="grid justify-center ">
+            <label class="grid pb-1 "> Email</label>
+            <input class=" email border-[1px] p-1 rounded pl-4" type="email" placeholder="Enter Your Email">
+            <small class="emailError error grid pt-1 "> df</small>
+        </div>
+
+        <div class="grid justify-center mt-1 ">
+            <label class="grid pb-1 "> Password</label>
+            <input class=" password border-[1px] p-1 rounded pl-4" type="password" placeholder="Enter Your Password">
+            <small class="passwordError error grid pt-1 "> df</small>
+        </div>
+
+        <div class="grid justify-start mt-1 pl-10 ">
+            <input type="Submit" class="border-[.1rem] p-1 bg-blue-600 w-40 mt-2 rounded">
+            <small class="resultMassege grid pt-1 text-center text-[1.5rem]"></small>
+        </div>
+    </form>
+    </div>
+</body>
+<script>
+let email = document.querySelector(".email");
+let password = document.querySelector(".password");
+let form = document.querySelector("form");
+let emailError = document.querySelector(".emailError");
+let passwordError = document.querySelector(".passwordError");
+
+form.addEventListener("submit",function(dets){
+    dets.preventDefault();
+    emailError.textContent = "";
+    passwordError.textContent = "";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d\W_]{8,}$/;
+    let emailans = emailRegex.test(email.value);
+    let passwordans = passwordRegex.test(password.value);
+    let isvalid = true;
+    if(!emailans){
+        emailError.textContent = "Email is incorrect";
+        emailError.style.display = "initial";
+        isvalid = false;
+    }
+    if(!passwordans){
+        passwordError.textContent = `Password is incorrect`;
+        passwordError.style.display = "initial";
+        isvalid = false;
+    }
+
+    if (isvalid){
+        document.querySelector(".resultMassege").textContent = "Everything is fine";
+    }
+
+})
+</script>
+</html>
