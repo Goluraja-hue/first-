@@ -13,7 +13,7 @@ function getquote() {fetch(api)
 })
 .then((res) => {
     console.log(res);
-quote.textContent = ` ‶ ${res.quote} ‶`;
+quote.textContent = ` “ ${res.quote} ”`;
 author.textContent = ` — ${res.author}`;
 })
 .catch((error) => {
