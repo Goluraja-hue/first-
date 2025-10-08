@@ -1,0 +1,32 @@
+.container{
+    width: 200px;
+    height: auto;
+    display: inline-block;
+    justify-content: center;
+    background-color: gray;
+    border-radius: 10px;
+    padding: 15px;
+}
+img{
+    width: 200px;
+    height: 200px;
+    border: 1px solid #545454;
+    object-fit: cover;
+    overflow: auto;
+    border-radius: 10px;
+}
+.filmName{
+    color: aqua;
+    margin: 0px 5px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.filmContent{
+    color: aquamarine;
+    margin: 5px 5px;
+    font-size: .9rem;
+}
+.filmDescription{
+    margin: 0px 5px;
+    font-size: .8rem;
+}
