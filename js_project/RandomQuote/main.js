@@ -1,5 +1,4 @@
 const api = 'https://dummyjson.com/quotes/random';
-// const api = "https://quotes.domiadi.com/api"
 
 let quote = document.querySelector('.quote');
 let author = document.querySelector('.author');
