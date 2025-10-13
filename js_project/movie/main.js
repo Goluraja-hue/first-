@@ -7,7 +7,7 @@ let filmDescription = document.querySelector(".filmDescription");
 
 
 function movie(){
-    const url = "https://imdb.iamidiotareyoutoo.com/search?tt=tt2250912"
+    const url = "https://dummyjson.com/products"
 
     fetch(url)
     .then ((data) => {
@@ -15,13 +15,13 @@ function movie(){
     })
     .then ((res) => {
         console.log(res);
-        // console.log(res.short.image);
-        for (let i = 0 ; i <= 10 ; i++){
-        img.src = res.short.image;
-        filmName.textContent = res.short.name;
-        filmContent.textContent = res.short.keywords;
-        filmDescription.textContent = res.short.description;
-        }
+        console.log(res.products[0]);
+    
+        img.src = res.products[0].images;
+        filmName.textContent = res.products[0].title;
+        filmContent.textContent = res.products[0].description;
+        filmDescription.textContent = res.products[0].price;
+    
     })
     .catch ((error) => {
         console.log(error);
